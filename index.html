@@ -1,20 +1,296 @@
-<div><img src="supp_real_video_final/bigmac/input.png" style="max-width:6%; max-height:6vw"> </div>
-<video autoplay controls muted loop playsinline><source src="supp_real_video_final/bigmac/ours.mp4" type="video/mp4"></video><br>
-<div><img src="supp_real_video_final/broccoli/input.png" style="max-width:6%; max-height:6vw"> </div>
-<video autoplay controls muted loop playsinline><source src="supp_real_video_final/broccoli/ours.mp4" type="video/mp4"></video><br>
-<div><img src="supp_real_video_final/chat_toy/input.png" style="max-width:6%; max-height:6vw"> </div>
-<video autoplay controls muted loop playsinline><source src="supp_real_video_final/chat_toy/ours.mp4" type="video/mp4"></video><br>
-<div><img src="supp_real_video_final/chocolatecake/input.png" style="max-width:6%; max-height:6vw"> </div>
-<video autoplay controls muted loop playsinline><source src="supp_real_video_final/chocolatecake/ours.mp4" type="video/mp4"></video><br>
-<div><img src="supp_real_video_final/clock2/input.png" style="max-width:6%; max-height:6vw"> </div>
-<video autoplay controls muted loop playsinline><source src="supp_real_video_final/clock2/ours.mp4" type="video/mp4"></video><br>
-<div><img src="supp_real_video_final/creamcake/input.png" style="max-width:6%; max-height:6vw"> </div>
-<video autoplay controls muted loop playsinline><source src="supp_real_video_final/creamcake/ours.mp4" type="video/mp4"></video><br>
-<div><img src="supp_real_video_final/dinosaur/input.png" style="max-width:6%; max-height:6vw"> </div>
-<video autoplay controls muted loop playsinline><source src="supp_real_video_final/dinosaur/ours.mp4" type="video/mp4"></video><br>
-<div><img src="supp_real_video_final/hydrant/input.png" style="max-width:6%; max-height:6vw"> </div>
-<video autoplay controls muted loop playsinline><source src="supp_real_video_final/hydrant/ours.mp4" type="video/mp4"></video><br>
-<div><img src="supp_real_video_final/lysol/input.png" style="max-width:6%; max-height:6vw"> </div>
-<video autoplay controls muted loop playsinline><source src="supp_real_video_final/lysol/ours.mp4" type="video/mp4"></video><br>
-<div><img src="supp_real_video_final/mario/input.png" style="max-width:6%; max-height:6vw"> </div>
-<video autoplay controls muted loop playsinline><source src="supp_real_video_final/mario/ours.mp4" type="video/mp4"></video><br>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="One-2-3-45: Any Single Image to 3D Mesh in 45 Seconds without Per-Shape Optimization.">
+  <meta name="keywords" content="3D AIGC, single image to 3D, single image reconstruction, text to 3D">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>One-2-3-45</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/logo.png">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href="cseweb.ucsd.edu/~mil070/">
+      <span class="icon">
+          <i class="fas fa-home"></i>
+      </span>
+      </a>
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          More Research
+        </a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="https://colin97.github.io/OpenShape/">
+            OpenShape
+          </a>
+          <a class="navbar-item" href="https://colin97.github.io/PartSLIP_page/">
+            PartSLIP
+          </a>
+          <a class="navbar-item" href="https://mhsung.github.io/publications/deep-meta-handles">
+            DeepMetaHandles
+          </a>
+          <a class="navbar-item" href="https://colin97.github.io/CoACD/">
+            CoACD
+          </a>
+          <a class="navbar-item" href="https://colin97.github.io/FrameMining/">
+            FrameMining
+          </a>
+          <a class="navbar-item" href="https://arxiv.org/pdf/2210.08064.pdf">
+            LESS
+          </a>
+          <a class="navbar-item" href="https://arxiv.org/pdf/2007.09267.pdf">
+            PC2Mesh
+          </a>
+          <a class="navbar-item" href="https://arxiv.org/pdf/2007.09267.pdf">
+            MSN
+          </a>
+          <a class="navbar-item" href="https://cseweb.ucsd.edu/~mil070/projects/AAMAS19/paper.pdf">
+            MAPD
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">One-2-3-45: Any Single Image to 3D Mesh in 45 Seconds without Per-Shape Optimization</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="cseweb.ucsd.edu/~mil070/">Minghua Liu</a><sup>1*</sup>,</span>
+            <span class="author-block">
+              <a href="https://chaoxu.xyz/">Chao Xu</a><sup>2*</sup>,</span>
+            <span class="author-block">
+              <a href="https://haian-jin.github.io/">Haian Jin</a><sup>3*</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://ootts.github.io/">Linghao Chen</a><sup>1,2*</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://mukundvarmat.github.io/">Mukund Varma T</a><sup>4</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://cseweb.ucsd.edu/~zex014/">Zexiang Xu</a><sup>5</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://cseweb.ucsd.edu//~haosu/">Hao Su</a><sup>1</sup>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>UC San Diego,</span>
+            <span class="author-block"><sup>2</sup>UCLA</span>
+            <span class="author-block"><sup>3</sup>Zhejiang University</span>
+            <span class="author-block"><sup>4</sup>IIT Madras</span>
+            <span class="author-block"><sup>5</sup>Adobe</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container">
+      <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+        <source src="./static/img-2-3d.mp4"
+                type="video/mp4">
+      </video>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Single image 3D reconstruction is an important but challenging task that requires extensive knowledge of our natural world. Many existing methods solve this problem by optimizing a neural radiance field under the guidance of 2D diffusion models but suffer from lengthy optimization time, 3D inconsistency results, and poor geometry. In this work, we propose a novel method that takes a single image of any object as input and generates a full 360-degree 3D textured mesh in a single feed-forward pass. Given a single image, we first use a view-conditioned 2D diffusion model, Zero123, to generate multi-view images for the input view, and then aim to lift them up to 3D space. Since traditional reconstruction methods struggle with inconsistent multi-view predictions, we build our 3D reconstruction module upon an SDF-based generalizable neural surface reconstruction method and propose several critical training strategies to enable the reconstruction of 360-degree meshes. Without costly optimizations, our method reconstructs 3D shapes in significantly less time than existing methods. Moreover, our method favors better geometry, generates more 3D consistent results, and adheres more closely to the input image. We evaluate our approach on both synthetic data and in-the-wild images and demonstrate its superiority in terms of both mesh quality and runtime. In addition, our approach can seamlessly support the text-to-3D task by integrating with off-the-shelf text-to-image diffusion models.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <div class = "has-text-centered">
+          <h2 class="title is-3">Method</h2>
+        </div>
+          <img src="./static/method.png"
+          class=""
+          alt=""/>
+          Our method consists of three primary components: (a) <b>Multi-view synthesis</b>: we use a view-conditioned 2D diffusion model, Zero123 [36], to generate multi-view images in a two-stage manner. The input of Zero123 includes a single image and a relative camera transformation, which is parameterized by the relative spherical coordinates (∆θ, ∆φ, ∆r). (b) <b>Pose estimation</b>: we estimate the elevation angle θ of the input image based on four nearby views generated by Zero123. We then obtain the poses of the multi-view images by combining the specified relative poses with the estimated pose of the input view. (c) <b>3D reconstruction</b>: We feed the multi-view posed images to an SDF-based generalizable neural surface reconstruction module for 360◦ mesh reconstruction.
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <div class = "has-text-centered">
+          <h2 class="title is-3">Text to 3D</h2>
+        </div>
+        <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+          <source src="./static/text-2-3d.mp4"
+                  type="video/mp4">
+        </video>
+        We utilize DALL-E 2 to generate an image conditioned on the text and then lift it to 3D.
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <div class = "has-text-centered">
+          <h2 class="title is-3">Comparison with Existing Methods</h2>
+        </div>
+        <img src="./static/comparison.png"
+        class=""
+        alt=""/>
+        <br>
+        <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+          <source src="./static/img-2-3d-com.mp4"
+                  type="video/mp4">
+        </video>
+        <div class = "has-text-centered">
+          Image-to-3D Comparison.
+        </div>
+        <br>
+        <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+          <source src="./static/text-2-3d-com.mp4"
+                  type="video/mp4">
+        </video>
+        <div class = "has-text-centered">
+          Text-to-3D Comparison.
+        </div>
+        <br>
+        <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+          <source src="./static/real-com.mp4"
+                  type="video/mp4">
+        </video>
+        <div class = "has-text-centered">
+          More comparison with Shap-E on real-world images. 2-3 row: One-2-3-45; 4-5 row: Shap-E.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{one2345,
+}</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link"
+         href="">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a class="icon-link" href="cseweb.ucsd.edu/~mil070/" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is borrowed from <a
+              href="https://github.com/nerfies/nerfies.github.io">nerfies</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
